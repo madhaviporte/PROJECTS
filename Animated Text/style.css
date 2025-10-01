@@ -1,0 +1,104 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    body {
+      background-image: url(./WhatsApp\ Image\ 2025-07-04\ at\ 22.50.53_7c9ebcc2.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      position: relative;
+      text-align: center;
+    }
+
+    /* Optional dark overlay for readability */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .typing, .glow, .wave {
+      z-index: 1;
+      padding: 10px;
+    }
+
+    .typing {
+      font-size: 24px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid white;
+      width: 0;
+      animation: typing 4s steps(30) forwards, blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 23ch; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .glow {
+      font-size: 36px;
+      color: #fff;
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+      animation: glow 2s ease-in-out infinite alternate;
+      margin-top: 30px;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+      }
+      to {
+        text-shadow: 0 0 20px #0ff, 0 0 30px #0ff;
+      }
+    }
+
+    .wave {
+      display: inline-block;
+      font-size: 32px;
+      margin-top: 20px;
+      animation: waveAnim 2s infinite ease-in-out;
+    }
+
+    @keyframes waveAnim {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(15deg); }
+    }
+
+    /* Responsive text sizes for small screens */
+    @media (max-width: 600px) {
+      .typing {
+        font-size: 18px;
+      }
+      .glow {
+        font-size: 24px;
+      }
+      .wave {
+        font-size: 24px;
+      }
+    }
+ 

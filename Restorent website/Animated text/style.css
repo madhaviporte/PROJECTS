@@ -1,0 +1,61 @@
+body {
+  background: #111;
+  color: #fff;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+}
+
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #00ffcc;
+  width: 0;
+  font-size: 30px;
+  animation: typing 3s steps(25) forwards, blink 0.5s step-end infinite;
+  animation-delay: 0s, 3s;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 22ch; } /* Number of characters */
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+.glow {
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  /* opacity: 0; */
+  animation: glow 3s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0;
+  }
+  to {
+    text-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7;
+  }
+}
+.slide-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 2s ease forwards;
+  animation-delay: 6s;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
